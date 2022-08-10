@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class MenuPanel : MonoBehaviour
 {
+    public SelectModePanel selectModePanel;
+    public SettingPanel settingPanel;
     //click start game button
     public void OnStartGameClick()
     {
-        //load the game scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("02-game");
+        //show select mode panel
+        selectModePanel.Show();
+        
     }
     //click the setting button
     public void OnSettingClick()
     {
-        //todo
+        //show setting panel
+        settingPanel.Show();
     }
     //click the exit button
     public void OnExitClick()
