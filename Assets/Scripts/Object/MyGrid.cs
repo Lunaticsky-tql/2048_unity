@@ -10,14 +10,13 @@ public class MyGrid : MonoBehaviour
     {
         return number != null;
     }
-    public MyNumber GetNumber()
+    public MyNumber GetMyNumber()
     {
         return number;
     }
-    public void SetNumber(MyNumber number)
+    public void SetMyNumber(MyNumber number)
     {
         this.number = number;
     }
-
 
 }
