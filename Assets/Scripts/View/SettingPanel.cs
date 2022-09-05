@@ -12,19 +12,19 @@ public class SettingPanel : View
     } 
     public void OnChangeSound(float soundVolume)
     {
-        //todo
+        AudioManager.Instance.OnSoundVolumeChange(soundVolume);
         PlayerPrefs.SetFloat(Const.Sound, soundVolume);
     }
     public void OnChangeMusic(float musicVolume)
     {
-        //todo
+        AudioManager.Instance.OnMusicVolumeChange(musicVolume);
         PlayerPrefs.SetFloat(Const.Music, musicVolume);
     }
 
     public override void Show()
     {
         base.Show();
-        sliderSound.value = PlayerPrefs.GetFloat(Const.Sound,0);
-        sliderMusic.value = PlayerPrefs.GetFloat(Const.Music,0);
+        sliderSound.value = PlayerPrefs.GetFloat(Const.Sound,0.5f);
+        sliderMusic.value = PlayerPrefs.GetFloat(Const.Music,0.5f);
     }
 }

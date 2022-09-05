@@ -22,6 +22,7 @@ public class MyNumber : MonoBehaviour
     private bool isDestroyAfterMove = false;
     private Vector3 startMovePos;
     public Color[] bg_colors;
+    public AudioClip mergeSound;
     
 
     private void Awake()
@@ -39,7 +40,7 @@ public class MyNumber : MonoBehaviour
         int num = UnityEngine.Random.Range(1, 4);
         if (num == 1)
         {
-            SetNumber(512);
+            SetNumber(4);
         }
         else
         {
@@ -123,6 +124,8 @@ public class MyNumber : MonoBehaviour
         //prevent merging again
         status = NumberStatus.CanNotMerge;
         PlayMergeAnimation();
+        //play merge sound
+        AudioManager.Instance.PlaySound(mergeSound);
     }
 
     public void ResetStatus()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,14 @@ public class MenuPanel : MonoBehaviour
 {
     public SelectModePanel selectModePanel;
     public SettingPanel settingPanel;
+    public AudioClip bgClip;
+
+
+    public void Start()
+    {
+        AudioManager.Instance.PlayMusic(bgClip);
+    }
+
     //click start game button
     public void OnStartGameClick()
     {
